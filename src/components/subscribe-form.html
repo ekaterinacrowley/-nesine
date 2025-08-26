@@ -1,0 +1,53 @@
+<div class="main-width">
+  <div class="subscribe-form">
+    <div class="subscribe-form__content">
+      <div class="subscribe-form__title" data-i18n="subscribe.title">
+        Subscribe to our newsletter for insider access!
+      </div>
+      <div
+        class="subscribe-form__description"
+        data-i18n="subscribe.description"
+      >
+        Join our community and never miss out on exciting opportunities.
+      </div>
+
+      <form
+        id="email-form"
+        class="subscribe-form__form"
+        action="save.php"
+        method="POST"
+      >
+        <div>
+          <input
+            type="email"
+            name="email"
+            placeholder="Enter your email"
+            required
+          />
+          <div class="subscribe-form__privacy" data-i18n="subscribe.privacy">
+            We care about your data. Read our privacy policy.
+          </div>
+          <div id="status"></div>
+        </div>
+        <button
+          type="submit"
+          class="btn btn--primary btn--l"
+          data-i18n="subscribe.button"
+        >
+          Subscribe
+        </button>
+      </form>
+    </div>
+    <div class="subscribe-form__image">
+      <img src="images/subscribe-image.png" alt="Subscribe Image" />
+    </div>
+  </div>
+</div>
+
+<script>
+  document.getElementById("email-form").addEventListener("submit", function () {
+    setTimeout(() => {
+      this.reset();
+    }, 500);
+  });
+</script>

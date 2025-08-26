@@ -1,0 +1,32 @@
+<header>
+  <div class="header main-width">
+    <div class="logo" data-i18n="header.title">Test</div>
+    <div class="header__nav">
+      <nav>
+        <ul>
+          <li><a href="#" data-i18n="header.menuHome">Главная</a></li>
+          <li><a href="#" data-i18n="header.menuAbout">О нас</a></li>
+          <li><a href="#" data-i18n="header.menuContact">Контакты</a></li>
+        </ul>
+      </nav>
+      <include src="language-switcher.html"></include>
+      <a class="btn btn--xs btn--tertiary" href="">Sign in</a>
+    </div>
+    <div class="header__mobile-btn"></div>
+  </div>
+</header>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const mobileBtn = document.querySelector('.header__mobile-btn');
+  const nav = document.querySelector('.header__nav');
+  const header = document.querySelector('header');
+  if (mobileBtn && nav && header) {
+    mobileBtn.addEventListener('click', function() {
+      mobileBtn.classList.toggle('close');
+      nav.classList.toggle('open');
+      header.classList.toggle('nav-open');
+    });
+  }
+});
+</script>

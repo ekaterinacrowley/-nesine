@@ -1,0 +1,50 @@
+.banners {
+    padding: 140px 0;
+
+     @media (max-width: 767px) { 
+        padding: 40px 16px;
+     }
+
+    &__title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+         @media (max-width: 767px) { 
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                gap: 16px;
+            }
+    }
+
+    &__list {
+        display: flex;
+        margin-top: 60px;
+        gap: 40px;
+        min-width: 800px;
+
+         @media (max-width: 767px) { 
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+            min-width: 100%;
+            max-width: 100%;
+            margin-top: 40px;
+         }
+
+    }
+
+    &__item {
+        border-radius: 32px;
+        max-width: 592px;
+        min-width: 592px;
+        height: 192px; 
+
+         @media (max-width: 767px) { 
+            min-width: 100%;
+            max-width: 100%;
+            height: auto;
+         }
+    }
+}
