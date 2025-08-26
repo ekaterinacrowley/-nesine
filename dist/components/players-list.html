@@ -1,0 +1,84 @@
+<div class="players-slider-wrapper">
+  <div class="players-slider swiper">
+    <div class="swiper-wrapper">
+      <!-- JS сгенерирует слайды -->
+    </div>
+  </div>
+</div>
+<!-- Swiper CDN -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  // Генерация игроков для слайдов
+  const names = [
+    'Player 1', 'Player 2', 'Player 3', 'Player 4', 'Player 5',
+    'Player 6', 'Player 7', 'Player 8', 'Player 9', 'Player 10',
+    'Player 11', 'Player 12', 'Player 13', 'Player 14', 'Player 15',
+    'Player 16', 'Player 17', 'Player 18', 'Player 19', 'Player 20'
+  ];
+  const images = ['images/player1.png', 'images/player2.png'];
+  const games = [
+    { img: 'images/game1.png', name: 'Game One', url: 'https://example.com/game1' },
+    { img: 'images/game2.png', name: 'Game Two', url: 'https://example.com/game2' },
+    { img: 'images/game3.png', name: 'Game Three', url: 'https://example.com/game3' },
+    { img: 'images/game4.png', name: 'Game Four', url: 'https://example.com/game4' }
+  ];
+  const slides = [];
+  for (let i = 0; i < 20; i++) {
+    const name = names[Math.floor(Math.random() * names.length)];
+    const bg = images[i % 2];
+    const game = games[i % games.length];
+    const count = Math.floor(Math.random() * 201) + 100; // 100-300
+    let flag = '';
+    if ((i + 1) % 3 === 0) {
+      const plus = Math.floor(Math.random() * 21) + 10;
+      flag = `<span class='players-list__flag players-list__flag--plus'>+${plus} ₺</span>`;
+    } else if ((i + 1) % 4 === 0) {
+      const minus = Math.floor(Math.random() * 21) + 10;
+      flag = `<span class='players-list__flag players-list__flag--minus'>-${minus} ₺</span>`;
+    }
+    slides.push(`
+      <div class="players-list__item swiper-slide" style="background-image: url('${bg}');">
+        <div class="players-list__content">
+          <div class="players-list__info">
+            <span class="players-list__name">${name}</span>
+            <span class="players-list__count">${count} ₺</span>
+            ${flag}
+          </div>
+          <a class="players-list__game" href="${game.url}" target="_blank">
+            <img src="${game.img}" alt="${game.name}">
+            ${game.name}
+          </a>
+        </div>
+      </div>
+    `);
+  }
+  const wrapper = document.querySelector('.players-slider .swiper-wrapper');
+  if (wrapper) {
+    wrapper.innerHTML = slides.join('');
+    // Определяем сколько слайдов реально помещается в контейнере
+    const container = document.querySelector('.players-slider');
+    let visibleSlides = 1;
+    if (container) {
+      const containerWidth = container.offsetWidth;
+      visibleSlides = Math.floor(containerWidth / 280);
+    }
+    // loop и centeredSlides — только если слайдов больше, чем помещается на экране
+    const enoughSlides = slides.length > visibleSlides;
+    const swiper = new Swiper('.players-slider', {
+      slidesPerView: 'auto',
+      slidesPerGroup: 1,
+      spaceBetween: 20,
+      loop: enoughSlides,
+      autoplay: {
+        delay: 3500,
+        disableOnInteraction: false,
+      },
+      centeredSlides: enoughSlides,
+      speed: 500,
+    });
+    swiper.update();
+  }
+});
+</script>

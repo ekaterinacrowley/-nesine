@@ -1,4 +1,3 @@
-
 // Динамически подгружать блок статей для выбранного языка через fetch
 async function showArticlesByLang(lang) {
   const main = document.querySelector('main');
@@ -62,10 +61,22 @@ function startRandomCounter() {
   const el = document.getElementById('random-counter');
   if (!el) return;
   function update() {
-    el.textContent = Math.floor(Math.random() * (1600 - 1200 + 1)) + 1200;
+    el.textContent = Math.floor(Math.random() * (20200 - 19700 + 1)) + 19700;
   }
   update();
   setInterval(update, 5000);
 }
 
 document.addEventListener('DOMContentLoaded', startRandomCounter);
+
+  // Универсальный путь к фавикону по data-brand
+  const html = document.documentElement;
+  const brand = html.getAttribute('data-brand') || 'default';
+  let faviconPath = `/images/favicon-${brand}.ico`;
+  let favicon = document.querySelector('link[rel="icon"]');
+  if (!favicon) {
+    favicon = document.createElement('link');
+    favicon.rel = 'icon';
+    document.head.appendChild(favicon);
+  }
+  favicon.href = faviconPath;

@@ -53,6 +53,7 @@
             width: calc(33.333% - 4px);
             height: 130px;
             background: var(--semantic-neutral-50);
+            text-align: center;
 
              @media (max-width: 767px) {
                 height: 96px;
@@ -169,6 +170,14 @@
         gap: 8px;
         font-weight: 500;
         color: var(--buttons-link02-fg-button-link02);
+       }
+
+       &__game-img {
+        width: 24px;
+        height: 24px;
+        background-size: cover;
+        background-position: center;
+        border-radius: 50%
        }
     }
 }

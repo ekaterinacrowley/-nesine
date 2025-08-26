@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="ru" data-brand="vdcasino-shop">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demo</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+  <div class="header main-width">
+    <div class="logo" data-i18n="header.title">Test</div>
+    <div class="header__nav">
+      <nav>
+        <ul>
+          <li><a href="#" data-i18n="header.menuHome">Главная</a></li>
+          <li><a href="#" data-i18n="header.menuAbout">О нас</a></li>
+          <li><a href="#" data-i18n="header.menuContact">Контакты</a></li>
+        </ul>
+      </nav>
+      <div class="custom-lang-dropdown" id="lang-select-wrapper">
+  <button type="button" class="lang-btn" id="lang-select-btn">
+    <span class="lang-flag flag-tr" id="lang-flag-btn">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g clip-path="url(#clip0_23018_283)">
+          <path d="M10 20C15.5228 20 20 15.5228 20 10C20 4.47715 15.5228 0 10 0C4.47715 0 0 4.47715 0 10C0 15.5228 4.47715 20 10 20Z" fill="#D80027"></path>
+          <path d="M9.59043 8.17139L10.4109 9.30205L11.7397 8.87119L10.9179 10.0009L11.7383 11.1315L10.41 10.699L9.58824 11.8287L9.5891 10.4318L8.26074 9.99928L9.58957 9.56842L9.59043 8.17139Z" fill="#F0F0F0"></path>
+          <path d="M7.35133 12.8262C5.79055 12.8262 4.52523 11.5609 4.52523 10.0001C4.52523 8.43935 5.79055 7.17404 7.35133 7.17404C7.83797 7.17404 8.29586 7.29712 8.69563 7.51373C8.06848 6.90037 7.21078 6.52185 6.26437 6.52185C4.34336 6.52185 2.78613 8.07912 2.78613 10.0001C2.78613 11.9211 4.3434 13.4783 6.26437 13.4783C7.21086 13.4783 8.06852 13.0998 8.69563 12.4865C8.29586 12.7031 7.83797 12.8262 7.35133 12.8262Z" fill="#F0F0F0"></path>
+        </g>
+        <defs>
+          <clipPath id="clip0_23018_283">
+            <rect width="20" height="20" fill="white"></rect>
+          </clipPath>
+        </defs>
+      </svg>
+    </span>
+    <span class="lang-label">Türkçe</span>
+    <span class="lang-arrow">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M15 7.5L10 12.5L5 7.5" stroke="#95A3B1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+      </svg>
+    </span>
+  </button>
+  <ul class="lang-list" id="lang-list" hidden="">
+    <li data-value="tr">
+      <span class="lang-flag flag-tr">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g clip-path="url(#clip0_23018_283)">
+            <path d="M10 20C15.5228 20 20 15.5228 20 10C20 4.47715 15.5228 0 10 0C4.47715 0 0 4.47715 0 10C0 15.5228 4.47715 20 10 20Z" fill="#D80027"></path>
+            <path d="M9.59043 8.17139L10.4109 9.30205L11.7397 8.87119L10.9179 10.0009L11.7383 11.1315L10.41 10.699L9.58824 11.8287L9.5891 10.4318L8.26074 9.99928L9.58957 9.56842L9.59043 8.17139Z" fill="#F0F0F0"></path>
+            <path d="M7.35133 12.8262C5.79055 12.8262 4.52523 11.5609 4.52523 10.0001C4.52523 8.43935 5.79055 7.17404 7.35133 7.17404C7.83797 7.17404 8.29586 7.29712 8.69563 7.51373C8.06848 6.90037 7.21078 6.52185 6.26437 6.52185C4.34336 6.52185 2.78613 8.07912 2.78613 10.0001C2.78613 11.9211 4.3434 13.4783 6.26437 13.4783C7.21086 13.4783 8.06852 13.0998 8.69563 12.4865C8.29586 12.7031 7.83797 12.8262 7.35133 12.8262Z" fill="#F0F0F0"></path>
+          </g>
+          <defs>
+            <clipPath id="clip0_23018_283">
+              <rect width="20" height="20" fill="white"></rect>
+            </clipPath>
+          </defs>
+        </svg>
+      </span>
+      <span class="lang-label">Türkçe</span>
+    </li>
+    <li data-value="en">
+      <span class="lang-flag flag-en">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_3238_134572)"><path d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z" fill="#F0F0F0"></path><path d="M2.48032 4.69409C1.53771 5.92048 0.826945 7.334 0.413086 8.86958H6.6558L2.48032 4.69409Z" fill="#0052B4"></path><path d="M23.5864 8.86953C23.1725 7.334 22.4617 5.92048 21.5191 4.69409L17.3438 8.86953H23.5864Z" fill="#0052B4"></path><path d="M0.413086 15.1304C0.826992 16.6659 1.53776 18.0794 2.48032 19.3058L6.65566 15.1304H0.413086Z" fill="#0052B4"></path><path d="M19.3053 2.48061C18.0789 1.538 16.6655 0.827236 15.1299 0.41333V6.656L19.3053 2.48061Z" fill="#0052B4"></path><path d="M4.69434 21.5193C5.92073 22.4619 7.33424 23.1727 8.86977 23.5866V17.344L4.69434 21.5193Z" fill="#0052B4"></path><path d="M8.86973 0.41333C7.33419 0.827236 5.92068 1.538 4.69434 2.48056L8.86973 6.65595V0.41333Z" fill="#0052B4"></path><path d="M15.1299 23.5866C16.6654 23.1727 18.0789 22.4619 19.3053 21.5194L15.1299 17.344V23.5866Z" fill="#0052B4"></path><path d="M17.3438 15.1304L21.5191 19.3058C22.4617 18.0795 23.1725 16.6659 23.5864 15.1304H17.3438Z" fill="#0052B4"></path><path d="M23.8984 10.4348H13.5653H13.5653V0.101578C13.0529 0.034875 12.5305 0 12 0C11.4694 0 10.9471 0.034875 10.4348 0.101578V10.4347V10.4347H0.101578C0.034875 10.9471 0 11.4695 0 12C0 12.5306 0.034875 13.0529 0.101578 13.5652H10.4347H10.4347V23.8984C10.9471 23.9651 11.4694 24 12 24C12.5305 24 13.0529 23.9652 13.5652 23.8984V13.5653V13.5653H23.8984C23.9651 13.0529 24 12.5306 24 12C24 11.4695 23.9651 10.9471 23.8984 10.4348Z" fill="#D80027"></path><path d="M15.1309 15.1304L20.4857 20.4852C20.732 20.239 20.9669 19.9817 21.191 19.7148L16.6066 15.1304H15.1309V15.1304Z" fill="#D80027"></path><path d="M8.86951 15.1306H8.86941L3.51465 20.4854C3.76084 20.7317 4.01823 20.9666 4.28504 21.1908L8.86951 16.6062V15.1306Z" fill="#D80027"></path><path d="M8.86976 8.8696V8.86951L3.51495 3.51465C3.26866 3.76084 3.03373 4.01823 2.80957 4.28504L7.39409 8.86955L8.86976 8.8696Z" fill="#D80027"></path><path d="M15.1309 8.86956L20.4857 3.51465C20.2395 3.26837 19.9821 3.03344 19.7153 2.80933L15.1309 7.39384V8.86956Z" fill="#D80027"></path></g><defs><clipPath id="clip0_3238_134572"><rect width="24" height="24" fill="white"></rect></clipPath></defs></svg>
+      </span>
+      <span class="lang-label">English</span>
+  </li></ul>
+</div>
+
+<style>
+
+.custom-lang-dropdown {
+  position: relative;
+  display: inline-block;
+  min-width: 120px;
+  font-family: inherit;
+}
+
+.lang-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 14px 6px 8px;
+  cursor: pointer;
+  min-width: 110px;
+  color: var(--semantic-neutral-700);
+}
+.lang-arrow {
+  margin-left: 8px;
+  height: 20px;
+  transition: transform 0.25s cubic-bezier(0.4,0,0.2,1);
+}
+.lang-arrow.open svg {
+  transform: rotate(-180deg);
+}
+.lang-list {
+  position: absolute;
+  left: 0;
+  top: 110%;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  min-width: 120px;
+  z-index: 10;
+}
+.lang-list li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 14px 7px 8px;
+  cursor: pointer;
+  transition: background 0.15s;
+  color: var(--semantic-neutral-700);
+}
+.lang-list li:hover {
+  background: #f0f0f0;
+}
+
+@media (max-width: 767px) {
+  .custom-lang-dropdown {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 0;
+    width: 100%;
+    margin-top: auto;
+    background: none;
+    box-shadow: none;
+    border: none;
+    padding: 0;
+  }
+  .lang-btn {
+    display: none !important;
+  }
+  .lang-list {
+    display: flex !important;
+    position: static;
+    left: auto;
+    top: auto;
+    background: none;
+    box-shadow: none;  
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+    z-index: auto;
+    border: 1px solid var(--semantic-neutral-100);
+    border-radius: 12px;
+    width: 100%;
+    height: 44px;
+  }
+  .lang-list li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    border-radius: 12px;
+    padding: 12px 16px 12px 12px;
+    width: 50%;
+    height: 44px;
+    color: var(--semantic-neutral-700);
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.15s;
+
+    span {
+      height: 20px;
+    }
+
+  }
+  .lang-list li.active, .lang-list li:hover {
+    border: 1px solid var(--semantic-brand-500);
+    background: transparent;
+  }
+}
+
+</style> 
+
+<script>
+// Кастомный дропдаун с флагами
+document.addEventListener('DOMContentLoaded', function() {
+  const btn = document.getElementById('lang-select-btn');
+  const list = document.getElementById('lang-list');
+  const wrapper = document.getElementById('lang-select-wrapper');
+  let current = localStorage.getItem('lang') || 'en';
+
+  function setActive(val) {
+    // Для мобильного: выделяем активный
+    if (window.innerWidth < 767) {
+      list.querySelectorAll('li').forEach(li => {
+        li.classList.toggle('active', li.getAttribute('data-value') === val);
+      });
+    }
+    // Для десктопа: обычная логика
+    if (btn) {
+      const flag = btn.querySelector('.lang-flag');
+      const label = btn.querySelector('.lang-label');
+      if (val === 'tr') {
+        flag.innerHTML = `<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g clip-path="url(#clip0_23018_283)">
+            <path d="M10 20C15.5228 20 20 15.5228 20 10C20 4.47715 15.5228 0 10 0C4.47715 0 0 4.47715 0 10C0 15.5228 4.47715 20 10 20Z" fill="#D80027" />
+            <path d="M9.59043 8.17139L10.4109 9.30205L11.7397 8.87119L10.9179 10.0009L11.7383 11.1315L10.41 10.699L9.58824 11.8287L9.5891 10.4318L8.26074 9.99928L9.58957 9.56842L9.59043 8.17139Z" fill="#F0F0F0" />
+            <path d="M7.35133 12.8262C5.79055 12.8262 4.52523 11.5609 4.52523 10.0001C4.52523 8.43935 5.79055 7.17404 7.35133 7.17404C7.83797 7.17404 8.29586 7.29712 8.69563 7.51373C8.06848 6.90037 7.21078 6.52185 6.26437 6.52185C4.34336 6.52185 2.78613 8.07912 2.78613 10.0001C2.78613 11.9211 4.3434 13.4783 6.26437 13.4783C7.21086 13.4783 8.06852 13.0998 8.69563 12.4865C8.29586 12.7031 7.83797 12.8262 7.35133 12.8262Z" fill="#F0F0F0" />
+          </g>
+          <defs>
+            <clipPath id="clip0_23018_283">
+              <rect width="20" height="20" fill="white" />
+            </clipPath>
+          </defs>
+        </svg>`;
+        label.textContent = 'Türkçe';
+      } else {
+        flag.innerHTML = '';
+        flag.className = 'lang-flag flag-en';
+        flag.innerHTML = `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_3238_134572)"><path d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z" fill="#F0F0F0" /><path d="M2.48032 4.69409C1.53771 5.92048 0.826945 7.334 0.413086 8.86958H6.6558L2.48032 4.69409Z" fill="#0052B4" /><path d="M23.5864 8.86953C23.1725 7.334 22.4617 5.92048 21.5191 4.69409L17.3438 8.86953H23.5864Z" fill="#0052B4" /><path d="M0.413086 15.1304C0.826992 16.6659 1.53776 18.0794 2.48032 19.3058L6.65566 15.1304H0.413086Z" fill="#0052B4" /><path d="M19.3053 2.48061C18.0789 1.538 16.6655 0.827236 15.1299 0.41333V6.656L19.3053 2.48061Z" fill="#0052B4" /><path d="M4.69434 21.5193C5.92073 22.4619 7.33424 23.1727 8.86977 23.5866V17.344L4.69434 21.5193Z" fill="#0052B4" /><path d="M8.86973 0.41333C7.33419 0.827236 5.92068 1.538 4.69434 2.48056L8.86973 6.65595V0.41333Z" fill="#0052B4" /><path d="M15.1299 23.5866C16.6654 23.1727 18.0789 22.4619 19.3053 21.5194L15.1299 17.344V23.5866Z" fill="#0052B4" /><path d="M17.3438 15.1304L21.5191 19.3058C22.4617 18.0795 23.1725 16.6659 23.5864 15.1304H17.3438Z" fill="#0052B4" /><path d="M23.8984 10.4348H13.5653H13.5653V0.101578C13.0529 0.034875 12.5305 0 12 0C11.4694 0 10.9471 0.034875 10.4348 0.101578V10.4347V10.4347H0.101578C0.034875 10.9471 0 11.4695 0 12C0 12.5306 0.034875 13.0529 0.101578 13.5652H10.4347H10.4347V23.8984C10.9471 23.9651 11.4694 24 12 24C12.5305 24 13.0529 23.9652 13.5652 23.8984V13.5653V13.5653H23.8984C23.9651 13.0529 24 12.5306 24 12C24 11.4695 23.9651 10.9471 23.8984 10.4348Z" fill="#D80027" /><path d="M15.1309 15.1304L20.4857 20.4852C20.732 20.239 20.9669 19.9817 21.191 19.7148L16.6066 15.1304H15.1309V15.1304Z" fill="#D80027" /><path d="M8.86951 15.1306H8.86941L3.51465 20.4854C3.76084 20.7317 4.01823 20.9666 4.28504 21.1908L8.86951 16.6062V15.1306Z" fill="#D80027" /><path d="M8.86976 8.8696V8.86951L3.51495 3.51465C3.26866 3.76084 3.03373 4.01823 2.80957 4.28504L7.39409 8.86955L8.86976 8.8696Z" fill="#D80027" /><path d="M15.1309 8.86956L20.4857 3.51465C20.2395 3.26837 19.9821 3.03344 19.7153 2.80933L15.1309 7.39384V8.86956Z" fill="#D80027" /></g><defs><clipPath id="clip0_3238_134572"><rect width="24" height="24" fill="white" /></clipPath></defs></svg>`;
+        label.textContent = 'English';
+      }
+    }
+  }
+
+  setActive(current);
+
+  // Для десктопа: dropdown
+  if (window.innerWidth >= 767) {
+    btn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      list.hidden = !list.hidden;
+      const arrow = btn.querySelector('.lang-arrow');
+      if (!list.hidden) {
+        arrow.classList.add('open');
+      } else {
+        arrow.classList.remove('open');
+      }
+    });
+    list.querySelectorAll('li').forEach(li => {
+      li.addEventListener('click', function() {
+        const val = li.getAttribute('data-value');
+        setActive(val);
+        list.hidden = true;
+        const arrow = btn.querySelector('.lang-arrow');
+        arrow.classList.remove('open');
+        if (window.setLanguage) window.setLanguage(val);
+      });
+    });
+    document.addEventListener('click', function(e) {
+      if (!wrapper.contains(e.target)) {
+        list.hidden = true;
+        const arrow = btn.querySelector('.lang-arrow');
+        arrow.classList.remove('open');
+      }
+    });
+  } else {
+    // Для мобильного: свитчер
+    list.hidden = false;
+    list.querySelectorAll('li').forEach(li => {
+      li.addEventListener('click', function() {
+        const val = li.getAttribute('data-value');
+        setActive(val);
+        if (window.setLanguage) window.setLanguage(val);
+      });
+    });
+  }
+});
+</script>
+      <a class="btn btn--xs btn--tertiary" href="">Sign in</a>
+    </div>
+    <div class="header__mobile-btn"></div>
+  </div>
+</header>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const mobileBtn = document.querySelector('.header__mobile-btn');
+  const nav = document.querySelector('.header__nav');
+  const header = document.querySelector('header');
+  if (mobileBtn && nav && header) {
+    mobileBtn.addEventListener('click', function() {
+      mobileBtn.classList.toggle('close');
+      nav.classList.toggle('open');
+      header.classList.toggle('nav-open');
+    });
+  }
+});
+</script>
+  <main>
+      <section class="main">
+    <div class="main-block main-width">
+        <div class="main-block__errore">
+            <span data-i18n="main.erroreSpan" class="main-block__errore-span">Engellendi</span>
+            <span data-i18n="main.erroreSpan2">BTK kararına göre hizmete erişim kısıtlandı.</span>
+            </div>
+        <h1 data-i18n="main.greeting" class="main-block__title"><span>Site engellendi,</span> ama kuponun güvende</h1>
+        <div class="main-description">
+<p data-i18n="main.description" class="main-block__description">This is the main content area.</p>
+<div class="main-block__button">
+    <a href="#" class="btn btn--primary btn--xl" data-i18n="main.button">Bonusu Al</a>
+    <span class="main-block__bonus" data-i18n="main.bonus">+100 ₺ bonus</span>
+</div>
+</div>
+
+<style>
+.main-description {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    text-align: center;
+    margin: 0 auto;
+}
+</style</style>
+        <div class="main-block__spline">
+           <script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.51/build/spline-viewer.js"></script>
+           <spline-viewer url="https://prod.spline.design/vsgZJzma8yNoZqdN/scene.splinecode"></spline-viewer>
+        </div>
+    </div> 
+</section>
+      <div class="xbet-block main-width">
+    <div class="xbet-block__title h2" data-i18n="xbet.title">Güçlü Markayla Güçlü Ortaklıklar</div>
+    <div class="xbet-block__description" data-i18n="xbet.description">1xBet, dünya çapında tanınan kulüplerin, sporcuların ve teknoloji markalarının güvenilir sponsoru ve iş ortağıdır.</div>
+    <div class="xbet-block__images">
+        <div class="image1"><img src="images/image1.png" alt=""></div>
+        <div class="image2"><img src="images/image2.png" alt=""></div>
+        <div class="image3"><img src="images/image3.png" alt=""></div>
+        <div class="image4"><img src="images/image4.png" alt=""></div>
+        <div class="image5"><img src="images/image5.png" alt=""></div>
+        <div class="image6"><img src="images/image6.png" alt=""></div>
+        <div class="image7"><img src="images/image7.png" alt=""></div>
+    </div>
+    <div class="xbet-block__sponsors">
+        <div class="sponsor1"><img src="images/sponsor1.png" alt=""></div>
+        <div class="sponsor2"><img src="images/sponsor2.png" alt=""></div>
+        <div class="sponsor3"><img src="images/sponsor3.png" alt=""></div>
+        <div class="sponsor4"><img src="images/sponsor4.png" alt=""></div>
+        <div class="sponsor5"><img src="images/sponsor5.png" alt=""></div>
+    </div>
+</div>
+      <div class="players">
+  <div class="digits-block main-width">
+    <h2 class="digits-block__title h2">
+        Top Türkiye oyuncuları
+        <span class="digits-block__count">
+        <div class="counter-component">
+  <span id="random-counter">0</span>
+</div>
+
+      </span>
+    </h2>
+    <ul class="digits-list">
+      <li class="digits-list__item">
+        <span class="digits-list__value">3 milyon</span>
+        <span class="digits-list__name">oyuncu</span>
+      </li>
+      <li class="digits-list__item">
+        <span class="digits-list__value">170’den fazla</span>
+        <span class="digits-list__name">slot ve bahis seçeneği</span>
+      </li>
+      <li class="digits-list__item">
+        <span class="digits-list__value">130</span>
+        <span class="digits-list__name">daha ülke</span>
+      </li>
+    </ul>
+  </div>
+  <div class="players-slider-wrapper">
+  <div class="players-slider swiper">
+    <div class="swiper-wrapper">
+      <!-- JS сгенерирует слайды -->
+    </div>
+  </div>
+</div>
+<!-- Swiper CDN -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  // Данные игроков и игр
+  const names = ['Mustafa', 'Ahmet', 'Mehmet', 'Ali', 'Hasan', 'Murat'];
+  const images = [
+    'images/player1.webp',
+    'images/player2.webp',
+    'images/player3.webp',
+    'images/player4.webp',
+    'images/player5.webp',
+    'images/player6.webp'
+  ];
+  const games = [
+    { img: 'images/game1.png', name: 'Aviator ', url: 'https://example.com/game1' },
+    { img: 'images/game2.png', name: 'Book of Ra', url: 'https://example.com/game2' },
+    { img: 'images/game3.png', name: 'Buffalo Power', url: 'https://example.com/game3' }, 
+    { img: 'images/game4.png', name: 'Crash', url: 'https://example.com/game4' },
+    { img: 'images/game5.png', name: 'Dice', url: 'https://example.com/game5' }, 
+    { img: 'images/game6.png', name: 'Gates of Olympus', url: 'https://example.com/game6' }
+  ];
+
+  const slides = [];
+  // Первая шестерка — без повторов
+  for (let i = 0; i < 6; i++) {
+    const count = Math.floor(Math.random() * 201) + 100; // 100-300
+    let flag = '';
+    if ((i + 1) % 3 === 0) {
+      const plus = Math.floor(Math.random() * 21) + 10;
+      flag = `<span class='players-list__flag players-list__flag--plus'>+${plus} ₺</span>`;
+    } else if ((i + 1) % 4 === 0) {
+      const minus = Math.floor(Math.random() * 21) + 10;
+      flag = `<span class='players-list__flag players-list__flag--minus'>-${minus} ₺</span>`;
+    }
+    slides.push(`
+      <div class="players-list__item swiper-slide" style="background-image: url('${images[i]}');">
+        <div class="players-list__content">
+          <div class="players-list__info">
+            <span class="players-list__name">${names[i]}</span>
+            <span class="players-list__count">${count} ₺</span>
+            ${flag}
+          </div>
+          <a class="players-list__game" href="${games[i].url}" target="_blank">
+            <div style="background-image: url('${games[i].img}');" class="players-list__game-img"></div>
+            ${games[i].name}
+          </a>
+        </div>
+      </div>
+    `);
+  }
+  // Вторая шестерка — те же, но снова без повторов
+  for (let i = 0; i < 6; i++) {
+    const count = Math.floor(Math.random() * 201) + 100; // 100-300
+    let flag = '';
+    if ((i + 7) % 3 === 0) {
+      const plus = Math.floor(Math.random() * 21) + 10;
+      flag = `<span class='players-list__flag players-list__flag--plus'>+${plus} ₺</span>`;
+    } else if ((i + 7) % 4 === 0) {
+      const minus = Math.floor(Math.random() * 21) + 10;
+      flag = `<span class='players-list__flag players-list__flag--minus'>-${minus} ₺</span>`;
+    }
+    slides.push(`
+     <div class="players-list__item swiper-slide" style="background-image: url('${images[i]}');">
+        <div class="players-list__content">
+          <div class="players-list__info">
+            <span class="players-list__name">${names[i]}</span>
+            <span class="players-list__count">${count} ₺</span>
+            ${flag}
+          </div>
+          <a class="players-list__game" href="${games[i].url}" target="_blank">
+            <div style="background-image: url('${games[i].img}');" class="players-list__game-img"></div>
+            ${games[i].name}
+          </a>
+        </div>
+      </div>
+    `);
+  }
+
+  const wrapper = document.querySelector('.players-slider .swiper-wrapper');
+  if (wrapper) {
+    wrapper.innerHTML = slides.join('');
+    // Определяем сколько слайдов реально помещается в контейнере
+    const container = document.querySelector('.players-slider');
+    let visibleSlides = 1;
+    if (container) {
+      const containerWidth = container.offsetWidth;
+      visibleSlides = Math.floor(containerWidth / 280);
+    }
+    // loop и centeredSlides — только если слайдов больше, чем помещается на экране
+    const enoughSlides = slides.length > visibleSlides;
+    const swiper = new Swiper('.players-slider', {
+      slidesPerView: 'auto',
+      slidesPerGroup: 1,
+      spaceBetween: 20,
+      loop: enoughSlides,
+      autoplay: {
+        delay: 3500,
+        disableOnInteraction: false,
+      },
+      centeredSlides: enoughSlides,
+      speed: 500,
+    });
+    swiper.update();
+  }
+});
+</script>
+
+  <div style="display: flex; justify-content: center; max-width: 346px; margin: 0 auto;">
+    <a href="#" class="btn btn--secondary btn--xl btn--arrow" data-i18n="secondary.button">Bahis Yap</a>
+
+<style>
+  .btn--arrow {
+    width: auto;
+  }
+
+  @media (max-width: 767px) {
+    .btn--arrow {
+      width: 100%;
+    }
+  }
+
+  .btn--arrow:after {
+    content: "";
+    display: inline-block;
+    width: 24px;
+    height: 25px;
+    margin-left: 8px;
+    background: url("data:image/svg+xml;utf8,<svg width='24' height='25' viewBox='0 0 24 25' fill='none' xmlns='http://www.w3.org/2000/svg'><rect width='24' height='24' transform='translate(0 0.712891)' fill='white' fill-opacity='0.05'/><rect y='0.712891' width='24' height='24' fill='white' fill-opacity='0.05'/><path d='M10 8.71289L14 12.7129L10 16.7129M22 12.7129C22 18.2357 17.5228 22.7129 12 22.7129C6.47715 22.7129 2 18.2357 2 12.7129C2 7.19004 6.47715 2.71289 12 2.71289C17.5228 2.71289 22 7.19004 22 12.7129Z' stroke='%231086D9' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/></svg>")
+      no-repeat center/contain;
+    vertical-align: middle;
+  }
+</style>
+
+  </div>
+</div>
+
+      <section class="infographics">
+    <div class="infographics-block main-width">
+        <div class="infographics-block__title">
+            <div data-i18n="infographics.title" class="h2">Hızlı, Kolay, Güvenli — kazanmanız için hazırız</div>
+            <a href="#" class="btn btn--secondary btn--xl btn--arrow" data-i18n="secondary.button">Bahis Yap</a>
+
+<style>
+  .btn--arrow {
+    width: auto;
+  }
+
+  @media (max-width: 767px) {
+    .btn--arrow {
+      width: 100%;
+    }
+  }
+
+  .btn--arrow:after {
+    content: "";
+    display: inline-block;
+    width: 24px;
+    height: 25px;
+    margin-left: 8px;
+    background: url("data:image/svg+xml;utf8,<svg width='24' height='25' viewBox='0 0 24 25' fill='none' xmlns='http://www.w3.org/2000/svg'><rect width='24' height='24' transform='translate(0 0.712891)' fill='white' fill-opacity='0.05'/><rect y='0.712891' width='24' height='24' fill='white' fill-opacity='0.05'/><path d='M10 8.71289L14 12.7129L10 16.7129M22 12.7129C22 18.2357 17.5228 22.7129 12 22.7129C6.47715 22.7129 2 18.2357 2 12.7129C2 7.19004 6.47715 2.71289 12 2.71289C17.5228 2.71289 22 7.19004 22 12.7129Z' stroke='%231086D9' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/></svg>")
+      no-repeat center/contain;
+    vertical-align: middle;
+  }
+</style>
+
+        </div>
+       <div class="infographics-block__list">
+            <div class="infographics-block__item">
+                <img src="images/infographic1.png" alt="">
+                <div class="infographics-block__item-title" data-i18n="infographics.item1">Hızlı</div>
+                <div class="infographics-block__item-description" data-i18n="infographics.desc1">Bahis kuponunuzu 3 tıkta oluşturun. Canlı oranlar milisaniyeler içinde güncellenir; sayfalar < 1 sn’de açılır.</div>
+            </div>
+            <div class="infographics-block__item">
+                <img src="images/infographic2.png" alt="">
+                <div class="infographics-block__item-title" data-i18n="infographics.item2">Kolay</div>
+                <div class="infographics-block__item-description" data-i18n="infographics.desc2">60+ ödeme yöntemi, anında TL yatırma / çekme. Binlerce maç ve marketi akıllı filtrelerle saniyeler içinde bulun.</div>
+            </div>
+            <div class="infographics-block__item">
+                <img src="images/infographic3.png" alt="">
+                <div class="infographics-block__item-title" data-i18n="infographics.item3">Güvenli</div>
+                <div class="infographics-block__item-description" data-i18n="infographics.desc3">Curaçao lisanslı sertifikalı bahis sitesi. 256-bit SSL, bağımsız denetimler ve sorumlu oyun politikasıyla verileriniz </div>
+            </div>
+        </div>
+    </div>
+</section>
+      <section class="banners">
+    <div class="banners__title main-width">
+        <div data-i18n="banners.title" class="h2">Kazanmaya Şimdi Başla!</div>
+        <a href="#" class="btn btn--secondary btn--xl btn--arrow" data-i18n="secondary.button">Bahis Yap</a>
+
+<style>
+  .btn--arrow {
+    width: auto;
+  }
+
+  @media (max-width: 767px) {
+    .btn--arrow {
+      width: 100%;
+    }
+  }
+
+  .btn--arrow:after {
+    content: "";
+    display: inline-block;
+    width: 24px;
+    height: 25px;
+    margin-left: 8px;
+    background: url("data:image/svg+xml;utf8,<svg width='24' height='25' viewBox='0 0 24 25' fill='none' xmlns='http://www.w3.org/2000/svg'><rect width='24' height='24' transform='translate(0 0.712891)' fill='white' fill-opacity='0.05'/><rect y='0.712891' width='24' height='24' fill='white' fill-opacity='0.05'/><path d='M10 8.71289L14 12.7129L10 16.7129M22 12.7129C22 18.2357 17.5228 22.7129 12 22.7129C6.47715 22.7129 2 18.2357 2 12.7129C2 7.19004 6.47715 2.71289 12 2.71289C17.5228 2.71289 22 7.19004 22 12.7129Z' stroke='%231086D9' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/></svg>")
+      no-repeat center/contain;
+    vertical-align: middle;
+  }
+</style>
+
+    </div>
+    <div class="banners__scroll">
+      <div class="banners__list">
+        <div class="banners__item">
+          <a href=""><img src="images/banner1.png" alt=""></a>
+        </div>
+        <div class="banners__item">
+          <a href=""><img src="images/banner2.png" alt=""></a>
+        </div>
+        <div class="banners__item">
+          <a href=""><img src="images/banner2.png" alt=""></a>
+        </div>
+        <div class="banners__item">
+          <a href=""><img src="images/banner2.png" alt=""></a>
+        </div>
+        <div class="banners__item">
+          <a href=""><img src="images/banner2.png" alt=""></a>
+        </div>
+      </div>
+    </div>
+    <style>
+      .banners__scroll {
+        overflow-x: auto;
+        overflow-y: hidden;
+        white-space: nowrap;
+        width: 100%;
+        scroll-behavior: smooth;
+        scrollbar-width: none; /* Firefox */
+      }
+      .banners__scroll::-webkit-scrollbar {
+        display: none; /* Chrome, Safari */
+      }
+  
+      .banners__item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    </style>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // alignBannersSlider удалён, не требуется для горизонтального скролла
+
+      // Scroll hijack v2
+      const scrollBlock = document.querySelector('.banners__scroll');
+      let hijackActive = false;
+      let lastScroll = 0;
+      function isInViewportStrict(el) {
+        const rect = el.getBoundingClientRect();
+        return rect.top <= window.innerHeight/2 && rect.bottom >= window.innerHeight/2;
+      }
+      function getScrollbarWidth() {
+        return window.innerWidth - document.documentElement.clientWidth;
+      }
+      function enableHijack() {
+        if (!hijackActive) {
+          hijackActive = true;
+          lastScroll = window.scrollY;
+          const scrollbarWidth = getScrollbarWidth();
+          document.body.style.position = 'fixed';
+          document.body.style.top = `-${lastScroll}px`;
+          document.body.style.left = '0';
+          document.body.style.right = '0';
+          document.body.style.width = '100%';
+          document.body.style.paddingRight = scrollbarWidth ? `${scrollbarWidth}px` : '';
+        }
+      }
+      function disableHijack() {
+        if (hijackActive) {
+          hijackActive = false;
+          document.body.style.position = '';
+          document.body.style.top = '';
+          document.body.style.left = '';
+          document.body.style.right = '';
+          document.body.style.width = '';
+          document.body.style.paddingRight = '';
+          window.scrollTo({ top: lastScroll });
+        }
+      }
+      // Активация по наведению курсора на .banners
+      const bannersSection = document.querySelector('.banners');
+      if (bannersSection) {
+        bannersSection.addEventListener('mouseenter', enableHijack);
+        bannersSection.addEventListener('mouseleave', disableHijack);
+      }
+      scrollBlock.addEventListener('wheel', function(e) {
+        if (!hijackActive) return;
+        const maxScroll = scrollBlock.scrollWidth - scrollBlock.clientWidth;
+        if ((e.deltaY > 0 && scrollBlock.scrollLeft < maxScroll) || (e.deltaY < 0 && scrollBlock.scrollLeft > 0)) {
+          e.preventDefault();
+          scrollBlock.scrollLeft += e.deltaY;
+          // Если почти достигнут конец, отключаем hijack
+          if (scrollBlock.scrollLeft + 2 >= maxScroll) {
+            disableHijack();
+          }
+          // Если почти достигнут начало, отключаем hijack
+          if (scrollBlock.scrollLeft <= 2 && e.deltaY < 0) {
+            disableHijack();
+          }
+        } else if (e.deltaY > 0 && scrollBlock.scrollLeft >= maxScroll) {
+          disableHijack();
+        } else if (e.deltaY < 0 && scrollBlock.scrollLeft <= 0) {
+          disableHijack();
+        }
+      }, { passive: false });
+    });
+    </script>
+</section>  
+     <div class="faq-block main-width">
+    <div class="faq-block__info">
+        <div class="faq-block__title h2" data-i18n="faq.title">Frequently asked questions</div>
+        <div class="faq-block__description" data-i18n="faq.description">For any unanswered questions, reach out to our support team via email. We'll respond as soon as possible to assist you.</div>
+    </div>
+    <div class="faq-block__list">
+        <div class="faq-block__item">
+            <details>
+                <summary data-i18n="faq.question1">What are your payment methods?</summary>
+                <p data-i18n="faq.answer1">If you created a new account after or while ordering you can edit both addresses (for billing and shipping) in your customer account.</p>
+            </details>
+        </div>
+    </div>
+</div>  
+     <div class="main-width">
+  <div class="subscribe-form">
+    <div class="subscribe-form__content">
+      <div class="subscribe-form__title" data-i18n="subscribe.title">
+        Subscribe to our newsletter for insider access!
+      </div>
+      <div class="subscribe-form__description" data-i18n="subscribe.description">
+        Join our community and never miss out on exciting opportunities.
+      </div>
+
+      <form id="email-form" class="subscribe-form__form" action="save.php" method="POST">
+        <div>
+          <input type="email" name="email" placeholder="Enter your email" required="">
+          <div class="subscribe-form__privacy" data-i18n="subscribe.privacy">
+            We care about your data. Read our privacy policy.
+          </div>
+          <div id="status"></div>
+        </div>
+        <button type="submit" class="btn btn--primary btn--l" data-i18n="subscribe.button">
+          Subscribe
+        </button>
+      </form>
+    </div>
+    <div class="subscribe-form__image">
+      <img src="images/subscribe-image.png" alt="Subscribe Image">
+    </div>
+  </div>
+</div>
+
+<script>
+  document.getElementById("email-form").addEventListener("submit", function () {
+    setTimeout(() => {
+      this.reset();
+    }, 500);
+  });
+</script>
+  
+      <div class="articles-block main-width">
+  <div class="articles-block__title">
+    <div data-i18n="articles.title" class="h2">
+      Güncel Haberler ve Rehberler
+    </div>
+    <a href="#" class="btn btn--secondary btn--xl btn--arrow" data-i18n="secondary.button">Bahis Yap</a>
+
+<style>
+  .btn--arrow {
+    width: auto;
+  }
+
+  @media (max-width: 767px) {
+    .btn--arrow {
+      width: 100%;
+    }
+  }
+
+  .btn--arrow:after {
+    content: "";
+    display: inline-block;
+    width: 24px;
+    height: 25px;
+    margin-left: 8px;
+    background: url("data:image/svg+xml;utf8,<svg width='24' height='25' viewBox='0 0 24 25' fill='none' xmlns='http://www.w3.org/2000/svg'><rect width='24' height='24' transform='translate(0 0.712891)' fill='white' fill-opacity='0.05'/><rect y='0.712891' width='24' height='24' fill='white' fill-opacity='0.05'/><path d='M10 8.71289L14 12.7129L10 16.7129M22 12.7129C22 18.2357 17.5228 22.7129 12 22.7129C6.47715 22.7129 2 18.2357 2 12.7129C2 7.19004 6.47715 2.71289 12 2.71289C17.5228 2.71289 22 7.19004 22 12.7129Z' stroke='%231086D9' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/></svg>")
+      no-repeat center/contain;
+    vertical-align: middle;
+  }
+</style>
+
+  </div>
+  <div class="articles-block__list">
+    <div class="article-card article-card--main">
+      <div class="article-card__image" style="background-image: url('images/article1.webp')"></div>
+      <div class="article-card__content">
+        <div class="article-card__title" data-i18n="articles.card.title">
+          Makale Başlığı
+        </div>
+        <div class="article-card__excerpt" data-i18n="articles.card.excerpt">
+          Makale özeti burada yer alacak. Makale özeti burada yer alacak. Makale
+          özeti burada yer alacak. Makale özeti burada yer alacak. Makale özeti
+          burada yer alacak.
+        </div>
+        <a href="#" class="btn btn--m btn--clear article-card__link" data-i18n="articles.card.link">Devamını Oku</a>
+      </div>
+    </div>
+    <div class="article-card article-card">
+      <div class="article-card__image" style="background-image: url('images/article2.webp')"></div>
+      <div class="article-card__content">
+        <div class="article-card__title" data-i18n="articles.card.title">
+          Makale Başlığı
+        </div>
+        <div class="article-card__excerpt" data-i18n="articles.card.excerpt">
+          Makale özeti burada yer alacak.
+        </div>
+        <a href="#" class="btn btn--m btn--clear article-card__link" data-i18n="articles.card.link">Devamını Oku</a>
+      </div>
+    </div>
+    <div class="article-card article-card">
+      <div class="article-card__image" style="background-image: url('images/article3.webp')"></div>
+      <div class="article-card__content">
+        <div class="article-card__title" data-i18n="articles.card.title">
+          Makale Başlığı
+        </div>
+        <div class="article-card__excerpt" data-i18n="articles.card.excerpt">
+          Makale özeti burada yer alacak.
+        </div>
+        <a href="#" class="btn btn--m btn--clear article-card__link" data-i18n="articles.card.link">Devamını Oku</a>
+      </div>
+    </div>
+  </div>
+  <div class="articles-block__more">
+    <a class="btn btn--m btn--tertiary articles-block__more" href="#" data-i18n="articles.all">View all posts</a>
+  </div>
+</div>
+
+  </main>
+
+  <footer>
+    <div class="footer main-width">
+        <nav class="footer__nav">
+            <ul>
+                <li><a href="#" data-i18n="footer.menuPrivacy">Gizlilik Politikası</a></li>
+                <li><a href="#" data-i18n="footer.menuTerms">Kullanım Şartları</a></li>
+                <li><a href="#" data-i18n="footer.menuContact">İletişim</a></li>
+            </ul>
+        </nav>
+        <p data-i18n="footer.copyright">&copy; 2025</p>
+    </div>
+</footer>  
+  
+  <script src="lang.js"></script>
+  <script src="main.js"></script>
+  <!-- showArticlesByLang теперь в main.js -->
+</body>
+</html>
