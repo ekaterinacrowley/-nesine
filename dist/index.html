@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Demo</title>
+  <title data-i18n="title">Demo</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -271,7 +271,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 </script>
-      <a class="btn btn--xs btn--tertiary" href="">Sign in</a>
+      <a class="btn btn--xs btn--tertiary" href="" data-i18n="header.button">Sign in</a>
     </div>
     <div class="header__mobile-btn"></div>
   </div>
@@ -346,7 +346,7 @@ document.addEventListener('DOMContentLoaded', function() {
       <div class="players">
   <div class="digits-block main-width">
     <h2 class="digits-block__title h2">
-        Top Türkiye oyuncuları
+        <div data-i18n="players.title">Top Türkiye oyuncuları</div>
         <span class="digits-block__count">
         <div class="counter-component">
   <span id="random-counter">0</span>
@@ -357,15 +357,15 @@ document.addEventListener('DOMContentLoaded', function() {
     <ul class="digits-list">
       <li class="digits-list__item">
         <span class="digits-list__value">3 milyon</span>
-        <span class="digits-list__name">oyuncu</span>
+        <span class="digits-list__name" data-i18n="players.digit1">oyuncu</span>
       </li>
       <li class="digits-list__item">
-        <span class="digits-list__value">170’den fazla</span>
-        <span class="digits-list__name">slot ve bahis seçeneği</span>
+        <span class="digits-list__value" data-i18n="players.digitMiddle">170’den fazla</span>
+        <span class="digits-list__name" data-i18n="players.digit2">slot ve bahis seçeneği</span>
       </li>
       <li class="digits-list__item">
         <span class="digits-list__value">130</span>
-        <span class="digits-list__name">daha ülke</span>
+        <span class="digits-list__name" data-i18n="players.digit3">daha ülke</span>
       </li>
     </ul>
   </div>
@@ -707,10 +707,40 @@ document.addEventListener('DOMContentLoaded', () => {
     <div class="faq-block__list">
         <div class="faq-block__item">
             <details>
-                <summary data-i18n="faq.question1">What are your payment methods?</summary>
-                <p data-i18n="faq.answer1">If you created a new account after or while ordering you can edit both addresses (for billing and shipping) in your customer account.</p>
+                <summary data-i18n="faq.q1">What are your payment methods?</summary>
+                <p data-i18n="faq.a1">If you created a new account after or while ordering you can edit both addresses (for billing and shipping) in your customer account.</p>
             </details>
         </div>
+        <a class="faq-block__item" href="">
+            <details>
+                <summary data-i18n="faq.q2">Where can I subscribe to your newsletter?</summary>
+                <p data-i18n="faq.a2"></p>
+            </details>
+        </a>
+        <a class="faq-block__item" href="">
+            <details>
+                <summary data-i18n="faq.q3">Can I order a free copy of a magazine to sample?</summary>
+                <p data-i18n="faq.a3"></p>
+            </details>
+        </a>
+        <a class="faq-block__item" href="">
+            <details>
+                <summary data-i18n="faq.q4">Do you accept orders via Phone or E-mail?</summary>
+                <p data-i18n="faq.a4"></p>
+            </details>
+        </a>
+        <a class="faq-block__item" href="">
+            <details>
+                <summary data-i18n="faq.q5">Where on your website can I open a customer account?</summary>
+                <p data-i18n="faq.a5"></p>
+            </details>
+        </a>
+        <a class="faq-block__item" href="">
+            <details>
+                <summary data-i18n="faq.q6">Do I need to create an account to make an order?</summary>
+                <p data-i18n="faq.a6"></p>
+            </details> 
+        </a>             
     </div>
 </div>  
      <div class="main-width">
@@ -741,7 +771,6 @@ document.addEventListener('DOMContentLoaded', () => {
     </div>
   </div>
 </div>
-
 <script>
   document.getElementById("email-form").addEventListener("submit", function () {
     setTimeout(() => {
@@ -785,10 +814,10 @@ document.addEventListener('DOMContentLoaded', () => {
     <div class="article-card article-card--main">
       <div class="article-card__image" style="background-image: url('images/article1.webp')"></div>
       <div class="article-card__content">
-        <div class="article-card__title" data-i18n="articles.card.title">
+        <div class="article-card__title" data-i18n="articles.card.title1">
           Makale Başlığı
         </div>
-        <div class="article-card__excerpt" data-i18n="articles.card.excerpt">
+        <div class="article-card__excerpt" data-i18n="articles.card.excerpt1">
           Makale özeti burada yer alacak. Makale özeti burada yer alacak. Makale
           özeti burada yer alacak. Makale özeti burada yer alacak. Makale özeti
           burada yer alacak.
@@ -799,10 +828,10 @@ document.addEventListener('DOMContentLoaded', () => {
     <div class="article-card article-card">
       <div class="article-card__image" style="background-image: url('images/article2.webp')"></div>
       <div class="article-card__content">
-        <div class="article-card__title" data-i18n="articles.card.title">
+        <div class="article-card__title" data-i18n="articles.card.title2">
           Makale Başlığı
         </div>
-        <div class="article-card__excerpt" data-i18n="articles.card.excerpt">
+        <div class="article-card__excerpt" data-i18n="articles.card.excerpt2">
           Makale özeti burada yer alacak.
         </div>
         <a href="#" class="btn btn--m btn--clear article-card__link" data-i18n="articles.card.link">Devamını Oku</a>
@@ -811,10 +840,10 @@ document.addEventListener('DOMContentLoaded', () => {
     <div class="article-card article-card">
       <div class="article-card__image" style="background-image: url('images/article3.webp')"></div>
       <div class="article-card__content">
-        <div class="article-card__title" data-i18n="articles.card.title">
+        <div class="article-card__title" data-i18n="articles.card.title3">
           Makale Başlığı
         </div>
-        <div class="article-card__excerpt" data-i18n="articles.card.excerpt">
+        <div class="article-card__excerpt" data-i18n="articles.card.excerpt3">
           Makale özeti burada yer alacak.
         </div>
         <a href="#" class="btn btn--m btn--clear article-card__link" data-i18n="articles.card.link">Devamını Oku</a>
@@ -832,9 +861,9 @@ document.addEventListener('DOMContentLoaded', () => {
     <div class="footer main-width">
         <nav class="footer__nav">
             <ul>
-                <li><a href="#" data-i18n="footer.menuPrivacy">Gizlilik Politikası</a></li>
-                <li><a href="#" data-i18n="footer.menuTerms">Kullanım Şartları</a></li>
-                <li><a href="#" data-i18n="footer.menuContact">İletişim</a></li>
+               <li><a href="#" data-i18n="header.menuHome"></a></li>
+                <li><a href="#" data-i18n="header.menuAbout"></a></li>
+                <li><a href="#" data-i18n="header.menuContact"></a></li>
             </ul>
         </nav>
         <p data-i18n="footer.copyright">&copy; 2025</p>

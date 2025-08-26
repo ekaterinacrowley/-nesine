@@ -1,0 +1,112 @@
+<section class="banners">
+    <div class="banners__title main-width">
+        <div data-i18n="banners.title" class="h2">Kazanmaya Şimdi Başla!</div>
+        <include src="button.html"></include>
+    </div>
+    <div class="banners__scroll">
+      <div class="banners__list">
+        <div class="banners__item">
+          <a href=""><img src="images/banner1.png" alt="" /></a>
+        </div>
+        <div class="banners__item">
+          <a href=""><img src="images/banner2.png" alt="" /></a>
+        </div>
+        <div class="banners__item">
+          <a href=""><img src="images/banner2.png" alt="" /></a>
+        </div>
+        <div class="banners__item">
+          <a href=""><img src="images/banner2.png" alt="" /></a>
+        </div>
+        <div class="banners__item">
+          <a href=""><img src="images/banner2.png" alt="" /></a>
+        </div>
+      </div>
+    </div>
+    <style>
+      .banners__scroll {
+        overflow-x: auto;
+        overflow-y: hidden;
+        white-space: nowrap;
+        width: 100%;
+        scroll-behavior: smooth;
+        scrollbar-width: none; /* Firefox */
+      }
+      .banners__scroll::-webkit-scrollbar {
+        display: none; /* Chrome, Safari */
+      }
+  
+      .banners__item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    </style>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // alignBannersSlider удалён, не требуется для горизонтального скролла
+
+      // Scroll hijack v2
+      const scrollBlock = document.querySelector('.banners__scroll');
+      let hijackActive = false;
+      let lastScroll = 0;
+      function isInViewportStrict(el) {
+        const rect = el.getBoundingClientRect();
+        return rect.top <= window.innerHeight/2 && rect.bottom >= window.innerHeight/2;
+      }
+      function getScrollbarWidth() {
+        return window.innerWidth - document.documentElement.clientWidth;
+      }
+      function enableHijack() {
+        if (!hijackActive) {
+          hijackActive = true;
+          lastScroll = window.scrollY;
+          const scrollbarWidth = getScrollbarWidth();
+          document.body.style.position = 'fixed';
+          document.body.style.top = `-${lastScroll}px`;
+          document.body.style.left = '0';
+          document.body.style.right = '0';
+          document.body.style.width = '100%';
+          document.body.style.paddingRight = scrollbarWidth ? `${scrollbarWidth}px` : '';
+        }
+      }
+      function disableHijack() {
+        if (hijackActive) {
+          hijackActive = false;
+          document.body.style.position = '';
+          document.body.style.top = '';
+          document.body.style.left = '';
+          document.body.style.right = '';
+          document.body.style.width = '';
+          document.body.style.paddingRight = '';
+          window.scrollTo({ top: lastScroll });
+        }
+      }
+      // Активация по наведению курсора на .banners
+      const bannersSection = document.querySelector('.banners');
+      if (bannersSection) {
+        bannersSection.addEventListener('mouseenter', enableHijack);
+        bannersSection.addEventListener('mouseleave', disableHijack);
+      }
+      scrollBlock.addEventListener('wheel', function(e) {
+        if (!hijackActive) return;
+        const maxScroll = scrollBlock.scrollWidth - scrollBlock.clientWidth;
+        if ((e.deltaY > 0 && scrollBlock.scrollLeft < maxScroll) || (e.deltaY < 0 && scrollBlock.scrollLeft > 0)) {
+          e.preventDefault();
+          scrollBlock.scrollLeft += e.deltaY;
+          // Если почти достигнут конец, отключаем hijack
+          if (scrollBlock.scrollLeft + 2 >= maxScroll) {
+            disableHijack();
+          }
+          // Если почти достигнут начало, отключаем hijack
+          if (scrollBlock.scrollLeft <= 2 && e.deltaY < 0) {
+            disableHijack();
+          }
+        } else if (e.deltaY > 0 && scrollBlock.scrollLeft >= maxScroll) {
+          disableHijack();
+        } else if (e.deltaY < 0 && scrollBlock.scrollLeft <= 0) {
+          disableHijack();
+        }
+      }, { passive: false });
+    });
+    </script>
+</section> 

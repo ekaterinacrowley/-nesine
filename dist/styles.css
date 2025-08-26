@@ -2029,7 +2029,6 @@ header .header__mobile-btn {
   gap: 16px;
   border-radius: 16px;
   padding: 4px 10px 4px 4px;
-  height: 29px;
   background: var(--semantic-error-50);
   font-weight: 500;
   color: var(--semantic-error-700);
@@ -2088,7 +2087,7 @@ header .header__mobile-btn {
   color: var(--warning-500);
 }
 .main-block__description {
-  font-size: 1.7vw;
+  font-size: 24px;
   line-height: 133%;
   text-align: center;
   color: var(--text-body);
@@ -2141,6 +2140,7 @@ header .header__mobile-btn {
   background: var(--zinc-950);
   position: relative;
   margin-top: 120px;
+  pointer-events: none;
 }
 .main-block__spline spline-viewer {
   height: 480px;
@@ -2359,7 +2359,6 @@ header .header__mobile-btn {
   align-items: center;
   justify-content: center;
   padding: 32px;
-  width: calc(33.333% - 4px);
   height: 130px;
   background: var(--semantic-neutral-50);
   text-align: center;
@@ -2368,6 +2367,7 @@ header .header__mobile-btn {
   .digits-block .digits-list__item {
     height: 96px;
     padding: 12px;
+    width: calc(33.333% - 4px);
   }
 }
 .digits-block .digits-list__item:first-child {
@@ -2654,7 +2654,7 @@ header .header__mobile-btn {
 .faq-block__info {
   display: flex;
   flex-direction: column;
-  max-width: 500px;
+  max-width: 488px;
   gap: 8px;
 }
 .faq-block__description {
@@ -2665,7 +2665,6 @@ header .header__mobile-btn {
 .faq-block__list {
   display: flex;
   flex-direction: column;
-  gap: 24px;
   width: 100%;
   max-width: 590px;
 }
@@ -2679,7 +2678,7 @@ header .header__mobile-btn {
   border-top: 1px solid var(--border-border-tertiary);
 }
 .faq-block__item summary {
-  padding: 24px;
+  padding: 24px 60px 24px 24px;
   font-size: 24px;
   line-height: 133%;
   color: var(--text-heading-primary);
@@ -2689,7 +2688,7 @@ header .header__mobile-btn {
 }
 @media (max-width: 767px) {
   .faq-block__item summary {
-    padding: 24px 16px;
+    padding: 24px 50px 24px 16px;
     font-size: 18px;
     line-height: 156%;
   }

@@ -50,7 +50,6 @@
             align-items: center;
             justify-content: center;
             padding: 32px;
-            width: calc(33.333% - 4px);
             height: 130px;
             background: var(--semantic-neutral-50);
             text-align: center;
@@ -58,6 +57,7 @@
              @media (max-width: 767px) {
                 height: 96px;
                 padding: 12px;
+                width: calc(33.333% - 4px);
              }
 
             &:first-child {
