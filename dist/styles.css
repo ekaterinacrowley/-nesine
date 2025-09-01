@@ -1692,6 +1692,7 @@ header.nav-open {
   header {
     position: fixed;
     z-index: 999;
+    border-bottom: 1px solid var(--border-border-secondary, #C7CFD6);
   }
 }
 header .header {
@@ -2011,6 +2012,17 @@ header .header__mobile-btn {
 
 .main {
   background: var(--semantic-neutral-50);
+  position: relative;
+}
+.main:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  background: #fff;
+  z-index: 1;
 }
 
 .main-block {
@@ -2020,6 +2032,8 @@ header .header__mobile-btn {
   justify-content: center;
   min-height: calc(100vh - 64px); /* Adjusted for header height */
   gap: 20px;
+  position: relative;
+  z-index: 2;
 }
 .main-block__errore {
   display: flex;
@@ -2139,16 +2153,18 @@ header .header__mobile-btn {
   height: 330px;
   background: var(--zinc-950);
   position: relative;
-  margin-top: 120px;
+  margin-top: 60px;
   pointer-events: none;
 }
 .main-block__spline spline-viewer {
-  height: 480px;
   position: absolute;
-  top: -120px;
+  top: -100px;
   left: 0;
   right: 0;
   bottom: 0;
+}
+.main-block__spline spline-viewer #logo {
+  display: none !important;
 }
 
 .xbet-block {
@@ -2165,6 +2181,7 @@ header .header__mobile-btn {
 @media (max-width: 767px) {
   .xbet-block {
     height: auto;
+    min-height: auto;
     padding-top: 40px;
     padding-bottom: 40px;
   }
@@ -2648,7 +2665,6 @@ header .header__mobile-btn {
     padding-top: 40px;
     padding-bottom: 40px;
     flex-direction: column;
-    align-items: center;
   }
 }
 .faq-block__info {

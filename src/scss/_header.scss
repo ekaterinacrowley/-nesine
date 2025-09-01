@@ -12,6 +12,7 @@ header {
   @media (max-width: 767px) {
       position:fixed;
       z-index: 999;
+    border-bottom: 1px solid var(--border-border-secondary, #C7CFD6);
     }
 
   .header {

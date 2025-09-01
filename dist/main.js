@@ -72,4 +72,12 @@
     document.head.appendChild(favicon);
   }
   favicon.href = faviconPath;
+  window.addEventListener("DOMContentLoaded", () => {
+    const viewer = document.querySelector("spline-viewer");
+    const shadow = viewer.shadowRoot;
+    const logo = shadow.querySelector("#logo");
+    if (logo) {
+      logo.style.display = "none";
+    }
+  });
 })();

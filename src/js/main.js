@@ -80,3 +80,20 @@ document.addEventListener('DOMContentLoaded', startRandomCounter);
     document.head.appendChild(favicon);
   }
   favicon.href = faviconPath;
+
+  
+// ждём пока элемент появится на странице
+window.addEventListener('DOMContentLoaded', () => {
+  const viewer = document.querySelector('spline-viewer');
+
+  // у Spline shadowRoot открытый (open), можно достать
+  const shadow = viewer.shadowRoot;
+
+  // ищем логотип внутри
+  const logo = shadow.querySelector('#logo');
+
+  if (logo) {
+    logo.style.display = 'none'; // убираем
+  }
+});
+
