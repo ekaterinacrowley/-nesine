@@ -69,31 +69,50 @@ function startRandomCounter() {
 
 document.addEventListener('DOMContentLoaded', startRandomCounter);
 
-  // Универсальный путь к фавикону по data-brand
-  const html = document.documentElement;
-  const brand = html.getAttribute('data-brand') || 'default';
-  let faviconPath = `/images/favicon-${brand}.ico`;
-  let favicon = document.querySelector('link[rel="icon"]');
-  if (!favicon) {
-    favicon = document.createElement('link');
-    favicon.rel = 'icon';
-    document.head.appendChild(favicon);
-  }
-  favicon.href = faviconPath;
+// Универсальный путь к фавикону по data-brand
+const html = document.documentElement;
+const brand = html.getAttribute('data-brand') || 'default';
+let faviconPath = `/images/favicon-${brand}.ico`;
+let favicon = document.querySelector('link[rel="icon"]');
+if (!favicon) {
+  favicon = document.createElement('link');
+  favicon.rel = 'icon';
+  document.head.appendChild(favicon);
+}
+favicon.href = faviconPath;
 
-  
-// ждём пока элемент появится на странице
+// Подставляем название бренда в logo
 window.addEventListener('DOMContentLoaded', () => {
+  // Получаем список брендов из brands.txt
+  fetch('/brands.txt')
+    .then(resp => resp.text())
+    .then(text => {
+      const brands = text
+        .split('\n')
+        .map(b => b.trim())
+        .filter(b => b && !b.startsWith('//'));
+      const html = document.documentElement;
+      let brand = html.getAttribute('data-brand');
+      if (brands.includes(brand)) {
+        // Форматируем: убираем -, первая буква каждого слова большая
+        let formatted = brand
+          .replace(/-/g, ' ')
+          .replace(/\b\w/g, l => l.toUpperCase());
+        // Ищем элемент logo и подставляем название бренда
+        const logo = document.querySelector('.logo');
+        if (logo) {
+          logo.textContent = formatted;
+        }
+      }
+    });
+
+  // Spline logo скрытие
   const viewer = document.querySelector('spline-viewer');
-
-  // у Spline shadowRoot открытый (open), можно достать
-  const shadow = viewer.shadowRoot;
-
-  // ищем логотип внутри
-  const logo = shadow.querySelector('#logo');
-
-  if (logo) {
-    logo.style.display = 'none'; // убираем
+  if (viewer && viewer.shadowRoot) {
+    const logo = viewer.shadowRoot.querySelector('#logo');
+    if (logo) {
+      logo.style.display = 'none';
+    }
   }
 });
 

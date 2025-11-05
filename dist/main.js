@@ -73,11 +73,24 @@
   }
   favicon.href = faviconPath;
   window.addEventListener("DOMContentLoaded", () => {
+    fetch("/brands.txt").then((resp) => resp.text()).then((text) => {
+      const brands = text.split("\n").map((b) => b.trim()).filter((b) => b && !b.startsWith("//"));
+      const html2 = document.documentElement;
+      let brand2 = html2.getAttribute("data-brand");
+      if (brands.includes(brand2)) {
+        let formatted = brand2.replace(/-/g, " ").replace(/\b\w/g, (l) => l.toUpperCase());
+        const logo = document.querySelector(".logo");
+        if (logo) {
+          logo.textContent = formatted;
+        }
+      }
+    });
     const viewer = document.querySelector("spline-viewer");
-    const shadow = viewer.shadowRoot;
-    const logo = shadow.querySelector("#logo");
-    if (logo) {
-      logo.style.display = "none";
+    if (viewer && viewer.shadowRoot) {
+      const logo = viewer.shadowRoot.querySelector("#logo");
+      if (logo) {
+        logo.style.display = "none";
+      }
     }
   });
 })();
